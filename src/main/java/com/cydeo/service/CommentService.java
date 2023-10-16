@@ -4,9 +4,12 @@ import com.cydeo.model.Comment;
 import com.cydeo.proxy.CommentNotificationProxy;
 import com.cydeo.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope("prototype") //or
+//@Scope(BeanDefinition.SCOPE_SINGLETON)
 public class CommentService {
 
     private final CommentRepository commentRepository;                  //always will be final (for don't mistake)
